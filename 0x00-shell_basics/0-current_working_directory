@@ -1,4 +1,4 @@
 #!/bin/bash
-OUTPUT=$(pwd)
-echo ${OUTPUT}
+echo "$(pwd)"
+
 
