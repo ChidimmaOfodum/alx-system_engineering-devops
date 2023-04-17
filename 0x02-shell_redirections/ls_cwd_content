@@ -1,5 +1,5 @@
-total 44
-drwxr-xr-x 2 root root 246 Apr 17 15:49 .
+total 52
+drwxr-xr-x 2 root root 295 Apr 17 16:01 .
 drwxr-xr-x 6 root root 121 Apr 16 23:53 ..
 -rwxr--r-- 1 root root  32 Apr 17 15:24 0-hello_world
 -rwxr--r-- 1 root root  28 Apr 17 15:16 1-confused_smiley
@@ -9,7 +9,10 @@ drwxr-xr-x 6 root root 121 Apr 16 23:53 ..
 -rwxr--r-- 1 root root  35 Apr 17 15:31 4-lastlines
 -rwxr--r-- 1 root root  29 Apr 17 15:30 4-lastlines~
 -rwxr--r-- 1 root root  29 Apr 17 15:39 5-firstlines
+-rwxr--r-- 1 root root  40 Apr 17 15:58 6-third_line
 -rwxr--r-- 1 root root  74 Apr 17 15:38 7-file
 -rwxr--r-- 1 root root  36 Apr 17 15:49 8-cwd_state
--rw-r--r-- 1 root root   0 Apr 17 15:49 ls_cwd_content
+-rw-r--r-- 1 root root  38 Apr 17 16:01 \*\'Best
+-rw-r--r-- 1 root root   0 Apr 17 16:00 iacta
+-rw-r--r-- 1 root root   0 Apr 17 16:02 ls_cwd_content
 -rw-r--r-- 1 root root  10 Apr 16 23:59 README.md
