@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A script that uses while loop to display Best School
+
+counter=10
+while ((counter >  0)); 
+do 
+	echo "Best School"
+	((counter--))
+done ;
