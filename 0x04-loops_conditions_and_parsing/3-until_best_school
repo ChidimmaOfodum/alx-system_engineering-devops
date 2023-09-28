@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# A script that displays Best School
+
+counter=10;
+
+until [ $counter == 0 ];
+do
+	echo "Best School"
+	((counter--))
+done;
