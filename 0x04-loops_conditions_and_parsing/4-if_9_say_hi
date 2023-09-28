@@ -1,4 +1,4 @@
-i#!/usr/bin/env bash
+#!/usr/bin/env bash
 # A script that displays Best School except of the 9th iteration
 
 counter=1;
@@ -7,7 +7,7 @@ while [ $counter -le 10 ];
 do
 	if [ $counter -eq 9 ]
 	then
-		echo "Hi\nBest School"
+		printf "Hi\nBest School"
 	else
 		echo "Best School"
 	fi
