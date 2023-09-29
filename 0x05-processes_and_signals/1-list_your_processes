@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A script that displays a list of currently running processes
+# A script that displays a list of currently running processes in a user define format
 
-ps -u
+ps -eo user,pid,pcpu,pmem,vsz,rss,tname,stat,start_time,time,comm
