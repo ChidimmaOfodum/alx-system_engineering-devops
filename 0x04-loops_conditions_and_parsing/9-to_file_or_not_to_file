@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-
 # A script that provides information about a file
 
-filename="./school"
+filename="school"
 
 if [ -e "$filename" ]
 then
