@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 # Install nginx
-REDIRECT="\n\tlocation = /redirect_me {\n\t\treturn 301 https://www.google.com; \n\t}"
+REDIRECT="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.google.com; \n\t}"
 AFTER="server_name _;"
 
 #commands
 apt-get install -y nginx
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-service nginx restart
 sed -i "/$AFTER/a\ $REDIRECT" "/etc/nginx/sites-available/default"
 systemctl restart nginx.service
