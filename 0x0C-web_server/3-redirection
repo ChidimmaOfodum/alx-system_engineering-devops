@@ -4,7 +4,9 @@ REDIRECT="\n\tlocation = /redirect_me {\n\t\treturn 301 https://www.google.com; 
 AFTER="server_name _;"
 
 #commands
+apt-get -y update
 apt-get install -y nginx
+ufw allow 'Nginx HTTP'
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 sed -i "/$AFTER/a\ $REDIRECT" "/etc/nginx/sites-available/default"
 service nginx restart
