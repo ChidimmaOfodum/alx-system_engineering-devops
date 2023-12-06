@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Configure a load balancer
+FILE="/etc/haproxy/haproxy.cfg"
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
+apt-get -y install haproxy=2.0.\*
+
+cat <<EOF >> $FILE
+frontend myfrontend
+    bind 0.0.0.0:80
+    default_backend myservers
+backend myservers
+    server server1 54.172.251.66:80
+    server server2 54.197.206.65:80
+EOF
