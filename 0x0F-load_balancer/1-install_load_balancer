@@ -10,7 +10,7 @@ frontend myfrontend
     bind 0.0.0.0:80
     default_backend myservers
 backend myservers
-    server server1 54.172.251.66:80
-    server server2 54.197.206.65:80
+    server 397626-web-01 54.172.251.66:80
+    server 397626-web-02 54.197.206.65:80
 EOF
 service haproxy restart
