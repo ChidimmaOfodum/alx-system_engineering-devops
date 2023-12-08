@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+if [ "$#" -gt 1 ]; then
+  func() {
+    domain="$2"."$1" 
+    result=$(dig "$domain")
+    echo "$result" | awk '/;; ANSWER SECTION:/ { getline; split($1, parts, ".");print "The subdomain " parts[1] " is a " $4 " record and points to " $5}'
+  }
+  func "$1" "$2"
+else  
+  subdomains=("www" "lb-01" "web-01" "web-02")
+  func2() {
+    for i in "${subdomains[@]}"; do
+      tmp="$i"."$1"
+      rslt=$(dig "$tmp")
+      echo "$rslt" | awk '/;; ANSWER SECTION:/ { getline; split($1, parts, "."); print "The subdomain " parts[1] " is a " $4 " record and points to " $5 }'
+    done
+  }
+  func2 "$1"
+fi
