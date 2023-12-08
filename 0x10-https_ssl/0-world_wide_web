@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Retrieves information about subdomains
 if [ "$#" -gt 1 ]; then
   func() {
     domain="$2"."$1" 
