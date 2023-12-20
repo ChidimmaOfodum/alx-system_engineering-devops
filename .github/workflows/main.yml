@@ -14,4 +14,4 @@ jobs:
       - name: Run a simple script
         run: | 
           echo "-- Listing all branches ---"
-          git checkout master && git branch
+          git branch -r
