@@ -12,6 +12,4 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run a simple script
-        run: | 
-          echo "-- Listing all branches ---"
-          git branch -r | egrep -v '\b(origin\/(master|dev)\b)'
+        run: sh ./script.sh
