@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a simple script
-        run: echo "Hello world"
+        run: | 
+          echo "-- Listing all branches ---"
+          git checkout master && git branch
