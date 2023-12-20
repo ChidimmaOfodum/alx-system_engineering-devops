@@ -1,12 +1,16 @@
 name: simple-workflow
 run-name: my simple workflow
 on:
+  push:
+    branches: 
+      - master
   schedule:
     - cron: '*/6 * * * *'
 jobs:
   checks-schedule:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Run a simple script
         run: | 
           echo "-- Listing all branches ---"
