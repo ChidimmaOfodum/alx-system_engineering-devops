@@ -4,8 +4,6 @@ on:
   push:
     branches: 
       - master
-  schedule:
-    - cron: '*/6 * * * *'
 jobs:
   checks-schedule:
     runs-on: ubuntu-latest
@@ -16,4 +14,4 @@ jobs:
       - name: Run a simple script
         run: | 
           echo "-- Listing all branches ---"
-          git branch -r
+          git branch
