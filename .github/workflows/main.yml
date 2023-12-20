@@ -2,7 +2,7 @@ name: simple-workflow
 run-name: my simple workflow
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '*/6 * * * *'
 jobs:
   checks-schedule:
     runs-on: ubuntu-latest
