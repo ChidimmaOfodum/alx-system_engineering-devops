@@ -1,20 +1,25 @@
 #!/usr/bin/python3
 """Fetches data from an api"""
-from requests import get
-from sys import argv
-if __name__ == '__main__':
-    main_url = 'https://jsonplaceholder.typicode.com'
-    todo_url = main_url + "/user/{}/todos".format(argv[1])
-    name_url = main_url + "/users/{}".format(argv[1])
-    todo_result = get(todo_url).json()
-    name_result = get(name_url).json()
+import requests
+import sys
 
-    todo_num = len(todo_result)
-    todo_complete = len([todo for todo in todo_result
-                         if todo.get("completed")])
-    name = name_result.get("name")
-    print("Employee {} is done with tasks({}/{}):"
-          .format(name, todo_complete, todo_num))
-    for todo in todo_result:
-        if (todo.get("completed")):
-            print("\t {}".format(todo.get("title")))
+if __name__ == "__main__":
+    base_url = f"https://jsonplaceholder.typicode.com"
+    employee_id = sys.argv[1]
+    name_url = f"{base_url}/users/{employee_id}/"
+    todo_url = f"{base_url}/user/{employee_id}/todos"
+
+    name = requests.get(name_url).json().get('name')
+    todo = requests.get(todo_url).json()
+
+    len = len(todo)
+    completed = 0
+
+    for i in todo:
+        if i.get('completed'):
+            completed += 1
+
+    print(f"Employee {name} is done with tasks({completed}/{len}):")
+
+    for i in todo:
+        print(f"\t {i['title']}") if i['completed'] else None
