@@ -10,7 +10,7 @@ if __name__ == "__main__":
     name_url = f"{base_url}/users/{employee_id}/"
     todo_url = f"{base_url}/user/{employee_id}/todos"
 
-    name_lis = requests.get(name_url).json()
+    name_list = requests.get(name_url).json()
     todo = requests.get(todo_url).json()
 
     id, username = name_list['id'], name_list['username']
