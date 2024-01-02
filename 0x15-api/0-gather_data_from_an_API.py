@@ -1,5 +1,5 @@
-"""Fetches data from an api"""
 #!/usr/bin/python3
+"""Fetches data from an api"""
 import requests
 import sys
 
@@ -19,9 +19,7 @@ if __name__ == "__main__":
         if i['completed']:
             completed += 1
 
-    print(f"Employee {name['name']} is done with tasks ({completed} / {len})")
+    print(f"Employee {name['name']} is done with tasks({completed}/{len}):")
 
     for i in todo:
         print(f"\t {i['title']}") if i['completed'] else None
-    
-    print(__doc__)
