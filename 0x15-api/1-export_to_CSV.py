@@ -16,7 +16,7 @@ if __name__ == "__main__":
     id, username = name_list['id'], name_list['username']
 
     with open(f'{employee_id}.csv', 'w', newline='') as csvfile:
-        my_writer = csv.writer(csvfile, delimiter=',')
+        my_writer = csv.writer(csvfile, quoting=1)
 
         for i in todo:
             my_writer.writerow([id, username, i['completed'], i['title']])
