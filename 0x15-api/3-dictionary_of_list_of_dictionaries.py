@@ -8,18 +8,17 @@ if __name__ == "__main__":
     todo_url = f"{base_url}/todos"
 
     todo = requests.get(todo_url).json()
-    print(len(todo))
     user_dict = {}
 
     for i in todo:
         user_id = i['userId']
         if not user_dict.get(user_id, None):
             user_dict[user_id] = []
-            name = requests.get(f"{base_url}/users/{user_id}").json()['username']
-            print(name)
+            name_url = f"{base_url}/users/{user_id}"
+            name = requests.get(name_url).json()['username']
         else:
             name = user_dict[user_id][0]['username']
-        
+
         task = {"username": name,
                 "task": i['title'], "completed": i['completed']}
         user_dict[user_id].append(task)
